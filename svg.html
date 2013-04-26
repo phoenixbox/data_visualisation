@@ -13,7 +13,7 @@
   <body>
     <script type="text/javascript">
       
-      var w = 620;
+      var w = 650;
       var h = 500;
       
       var dataset = [ 30, 60, 35, 25, 75 ];
@@ -26,15 +26,19 @@
       var circles = svg.selectAll("circle")
           .data(dataset)
           .enter()
-          .append("circle")
-          .attr("class","svg");
+          .append("circle");
 
       circles.attr("cx", function(d, i) {
-            return (i * 115) + 35;
+            return (i * 125) + 35;
           })
-           .attr("cy", h/2)
-           .attr("r", function(d) {
+          .attr("cy", h/2)
+          .attr("r", function(d) {
             return d;
+           })
+           .attr("fill", "yellow")
+           .attr("stroke", "orange")
+           .attr("stroke-width", function(d) {
+            return d/2;
            });
 
     </script>
